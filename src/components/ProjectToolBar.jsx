@@ -4,6 +4,11 @@ import Button from "./ui/Button";
 import { Filter, Calendar, Share2, LayoutGrid, Link2 } from "lucide-react";
 import { useDispatch, useSelector } from "react-redux";
 import { setPriorityFilter } from "../features/filters/filterSlice";
+import avatar1 from "../assets/avatars/1.png";
+import avatar2 from "../assets/avatars/2.png";
+import avatar3 from "../assets/avatars/3.png";
+import avatar4 from "../assets/avatars/4.png";
+import avatar5 from "../assets/avatars/5.png";
 
 const ProjectToolbar = () => {
   const dispatch = useDispatch();
@@ -23,10 +28,10 @@ const ProjectToolbar = () => {
   }, []);
 
   const avatars = [
-    "/avatars/user1.png",
-    "/avatars/user2.png",
-    "/avatars/user3.png",
-    "/avatars/user4.png",
+    avatar1,
+    avatar2,
+    avatar3,
+    avatar4,
   ];
 
   return (
