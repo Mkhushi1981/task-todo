@@ -111,25 +111,29 @@ const TaskColumn = ({ status, borderColor, dotColor }) => {
               {tasks.length}
             </span>
           </div>
-          <button
-            onClick={() => setShowModal(true)}
-            className="bg-purple-100 hover:bg-purple-200 text-purple-600 rounded-full p-1"
-          >
-            <Plus size={14} />
-          </button>
+          {status === "To Do" && (
+            <button
+              onClick={() => setShowModal(true)}
+              className="bg-purple-100 hover:bg-purple-200 text-purple-600 rounded-full p-1"
+            >
+              <Plus size={14} />
+            </button>
+          )}
         </div>
 
         <div className={`border-t-2 ${borderColor} mb-4`} />
 
         {/* Task Cards */}
         <div className="space-y-4">
-          {tasks.map((task, index) => (
-            <TaskCard
-              key={task.id}
-              task={{ ...task, from: status, index }}
-              onDelete={handleDeleteTask}
-            />
-          ))}
+          {tasks
+            .filter((task) => task && task.id)
+            .map((task, index) => (
+              <TaskCard
+                key={task.id}
+                task={{ ...task, from: status, index }}
+                onDelete={handleDeleteTask}
+              />
+            ))}
         </div>
       </div>
 

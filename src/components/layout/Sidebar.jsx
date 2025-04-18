@@ -19,7 +19,8 @@ const projectItems = [
 
 const Sidebar = () => {
   return (
-    <aside className="w-64 min-h-screen bg-white border-r p-4 flex flex-col justify-between">
+    <aside className="w-64 min-h-screen bg-white border-r p-4 flex flex-col justify-between"
+     style={{ borderRightColor: "#dfdfdf" }}>
       <div>
         {/* Logo */}
         <h1 className="text-xl font-bold text-purple-700 mb-8">Project M.</h1>

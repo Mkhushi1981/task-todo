@@ -76,17 +76,24 @@ const tasksSlice = createSlice({
       const { sourceColumn, destinationColumn, sourceIndex, destinationIndex } =
         action.payload;
 
-      // Guard clause
       if (!state[sourceColumn] || !state[destinationColumn]) return;
 
       const sourceList = state[sourceColumn];
       const destList = state[destinationColumn];
 
+      // Check sourceIndex validity
+      if (sourceIndex < 0 || sourceIndex >= sourceList.length) return;
+
       const [movedTask] = sourceList.splice(sourceIndex, 1);
+
+      // Check if movedTask is valid before inserting
+      if (!movedTask) return;
+
       destList.splice(destinationIndex, 0, movedTask);
 
       saveToLocalStorage(state);
     },
+
     removeTask: (state, action) => {
       const { status, taskId } = action.payload;
       if (!state[status]) return;
