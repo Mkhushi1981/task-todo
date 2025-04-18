@@ -23,30 +23,30 @@ const loadFromLocalStorage = () => {
   // Fallback default structure
   return {
     "To Do": [
-      {
-        id: "1",
-        title: "Design wireframes",
-        description: "Sketch main screens",
-      },
-      {
-        id: "2",
-        title: "Create repo",
-        description: "Setup GitHub and project board",
-      },
+      // {
+      //   id: "1",
+      //   title: "Design wireframes",
+      //   description: "Sketch main screens",
+      // },
+      // {
+      //   id: "2",
+      //   title: "Create repo",
+      //   description: "Setup GitHub and project board",
+      // },
     ],
     "On Progress": [
-      {
-        id: "3",
-        title: "Build login screen",
-        description: "UI for login page",
-      },
+      // {
+      //   id: "3",
+      //   title: "Build login screen",
+      //   description: "UI for login page",
+      // },
     ],
     Done: [
-      {
-        id: "4",
-        title: "Project setup",
-        description: "Vite + Tailwind + Redux",
-      },
+      // {
+      //   id: "4",
+      //   title: "Project setup",
+      //   description: "Vite + Tailwind + Redux",
+      // },
     ],
   };
 };
